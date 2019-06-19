@@ -6,17 +6,18 @@
       <div class="container" style="padding: 20px">
           <div class="row">
               <div class="col" >
-                  <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Username">
+                  <input type="text" class="form-control" id="usernameInput" placeholder="Username">
               </div>
               <div class="col" >
-                  <div class="dropdown">
+                  <!-- <div class="dropdown">
                       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                           <a class="dropdown-item" href="#">User</a>
                           <a class="dropdown-item" href="#">Organization</a>
                       </div>
-                  </div>
+                  </div> -->
+                  <button (click)="getUsername()" type="button" class="btn btn-secondary">Get</button>
               </div>
           </div>
       </div>
@@ -35,9 +36,9 @@
               <tbody *ngFor="let repo of repos">
               <tr>
                   <td><a href="#">{{repo.name}}</a></td>
-                  <td>{{repo.lang}}</td>
-                  <td>{{repo.stars}}</td>
-                  <td>{{repo.updated}}</td>
+                  <td>{{repo.language}}</td>
+                  <td>{{repo.stargazers_count}}</td>
+                  <td>{{repo.updated_at.substring(0,10)}}</td>
               </tr>
               </tbody>
           </table>
